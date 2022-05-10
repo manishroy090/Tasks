@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main {
+        display: flex;
+        flex-direction: column;
+      }
+      #btn {
+        display: flex;
+        justify-content: center;
+      }
+      .outputparent {
+        display: flex;
+        justify-content: center;
+        
+        height: 707px;
+        align-items: center;
+      }
+      #output {
+        background-color: rgb(155 150 150);
+        height: 121px;
+        width: 210px;
+        text-align: center;
+        line-height: 109px;
+        display: none;
+        border: 1px solid black;
+        border-radius: 5px;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+        <!--This is div is parentelement of button element-->
+      <div id="btn">
+        <button onclick="output()">CLICK ME</button>
+      </div>
+       <!--This is div is parentelement of the div having output id means it used to display pop msg in browser display-->
+      <div class="outputparent" onclick="outsideClick()">
+        <div id="output">dfdjkhk</div>
+      </div>
+    </div>
+    <script>
+        /* output function used accessed output div from Html document ,by using DOM and innerText property this function are writing simple text dynamically in output div,and by default the display property is set as none,now it changed by the help of output function*/
+      function output() {
+        var outputbox = document.getElementById("output");
+        outputbox.innerText = "Task completed";
+        outputbox.style.display = "block";
+      }
+
+      /*IN outsideClick function i used window.location.reload for refresh the page only once. ouputbox variable accessing output div which is pop up div using DOM,and also the functionality of display none when i click outside of pop up div*/
+     
+      function outsideClick() {
+        window.location.reload();
+        var outputbox = document.getElementById("output");
+        outputbox.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
